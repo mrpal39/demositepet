@@ -4,7 +4,7 @@ from .defaults import *
 
 # 
 import os
-
+import django_heroku
 
 import environ
 env = environ.Env()
@@ -74,3 +74,4 @@ DATABASES = {
 
 # DATABASE_ROUTERS = ['routers.routing.AuthRouter',
 #                     'routers.routing.PrimaryReplicaRouter']
+django_heroku.settings(locals())

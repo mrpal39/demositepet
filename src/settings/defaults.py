@@ -5,6 +5,10 @@ from decouple import config
 from dj_database_url import parse as db_url
 BASE_DIR = os.path.dirname(__file__)
 
+ALLOWED_HOSTS = ['https://puppylover.herokuapp.com',
+                 'localhost',
+                 '127.0.0.1']
+
 
 DJANGO_APPS = (
     "django.contrib.admin",

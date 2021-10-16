@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container p-md-4">
+    <input type="text" name="search" id="serach" value=''>
+    <a href="" id='btnid' class="btn btn-primary">submit</a>
+    <a href="" id='random' class="btn btn-primary">Random</a>
+    <a href="" id='Bread' class="btn btn-primary">BY Bread</a>
+
+</div>
+
+<div class="container" id='results'>
+
+    <div class="row">
+        <div class='' id='listcol'>
+            <ul class=' list-group ' id='selectid'>
+
+
+
+            </ul>
+        </div>
+        <div class="col-8" id='bybreed'>
+            ss
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+
+
+<script>
+    $(document).ready(function () {
+
+        $('#random').click(function (e) {
+            e.preventDefault();
+            var aa = $('#serach').val();
+            $.ajax({
+                type: "GET",
+                url: "https://dog.ceo/api/breeds/image/random",
+                data: "data",
+                dataType: "json",
+                success: function (response) {
+                    if (response) {
+                        console.log(response.status)
+                        $('#results').html("<img id='' src=" + response.message +
+                            " alt='120px'>");
+
+                    } else { // DO SOMETHING }
+
+
+                    }
+                }
+            });
+
+        });
+
+
+        $.ajax({
+            type: "Get",
+            url: "https://dog.ceo/api/breeds/list/all",
+            data: "data",
+            dataType: "json",
+            success: function (response) {
+                var html = "";
+                if (response.status = 'status') {
+                    caon = response.message
+
+                    $.each(caon, function (index, element) {
+                        // element == this
+                        // $('#listcol').html("<a href=''> "+ element[]+"</a> ");
+                        html += "<li class='list-group-item' id='sel' data-value=" + index +
+                            ">" + index + " </li>"
+
+                    });
+                    $('#selectid').append(html);
+
+                    // $('#listcol').html("<a href='' > "+ response.message[0]+" </a> ");
+                } else {
+                    alert(response.error)
+
+                }
+
+            }
+        });
+
+
+    });
+    /////photo 
+    $(document).ready(function () {
+        $('#selectid').on('click', 'li', (function (e) {
+            e.preventDefault();
+            var breed = $(this).attr('data-value');
+            alert(breed)
+            $.ajax({
+                type: "GET",
+                url: "https://dog.ceo/api/breed/" + breed + "/images",
+                data: {},
+                dataType: "json",
+                success: function (response) {
+                    // alert(response.status)
+                    caon = (response.message)
+                    var html = ""
+                    $.each(caon, function (index, element) {
+                        // element == this
+                        // $('#listcol').html("<a href=''> "+ element[]+"</a> ");
+                        html += "<img src=" + element +
+                            "  width='100px' height='100px' >"
+                    });
+                    $('#bybreed').append(html);
+                },
+                error: function (xhr) {
+                    alert('error')
+                },
+                statusCode: {
+                    404: function () {
+                        alert("page not found");
+                    }
+                }
+
+            });
+        }));
+    });
+</script>
+{% endblock js %}

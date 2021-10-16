@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="jumbotron">
+  <h1 class="display-3">Searching pet</h1>
+  <p class="lead">find u dog</p>
+  <form class="d-flex pd-5">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+  <hr class="my-2">
+
+</div>
+{% include "pets_list.html" %}
+
+
+{% endblock content %}

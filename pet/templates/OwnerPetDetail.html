@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load i18n static compress %}
+
+{% block content %}
+
+
+
+<div class="card">
+
+  <div class="card-body">
+    <div class="p-5 mb-4 bg-light border rounded-3">
+
+      {% if user.is_authenticated and user == object.owner%}
+      <a href="{% url 'edit' %}" class="btn btn-primary">{% trans 'Edit' %}</a>
+
+
+      <a href="{%url 'pet_edit' object.pk  %}" class='btn btn-danger'>edit</a>
+
+
+      {% endif %}
+
+      <div class="card-title ">
+        <h1> Owne {{userinfo.kennel_name}} Kennel Home
+        </h1>
+        owenername: {{userinfo.first_name}}
+        {{userinfo.last_name}}
+
+        <p class="lead text text-right">{{userinfo.username}}
+          {% if user.is_authenticated and user.id == object.id %}
+          <a href="{% url 'edit' %}" class="btn btn-primary">{% trans 'Edit' %}</a>
+          {% endif %}
+          <a href="#" target="_blank" class="btn btn-primary btn-lg">{{userinfo.username}}</a></p>
+      </div>
+      <div class="card-head">
+        contact:<i class="fa fa-address-card" aria-hidden="true">{{userinfo.kennel_state}}</i>
+
+        <div class="card card-body">
+          <blockquote class="blockquote">
+            <p>{{userinfo.kennel_description}}</p>
+            <footer class="card-blockquote"> {{userinfo.kennel_contact}}
+              <cite title="Source title">
+                {{userinfo.kennel_addres}}
+              </cite></footer>
+          </blockquote>
+        </div>
+        <a class="btn btn-succes" href="{{userinfo.kennel_social}}">link</a>
+      </div> kanenl info:
+      <img src="{{userinfo.kennel_image.url}} " alt="" height="100px" width="120px" srcset="">
+    </div>
+
+
+    <div class="row p-md-5">
+      <div class="row ">
+        {% for p in UserPets %}
+        <div class="col-4">
+          <!-- <h4 class="card">{{p.owner}}</h4> -->
+          <div class="card card-body">
+            <img class="card-img-top" src="{{p.profile_picture.url}}" height="120px" width="150px" alt="" />
+            <h4 class="card-title">
+              
+              <a href="{%url 'pet_Detail' p.pk p.slug  %}">{{p.name}}</a></h4>
+            <p class="card-text">{{p.description}}</p>
+            <span class="card-tags">{{p.slug}}</span>
+
+            <a href="{% url  'petCategoryIn' p.category.id %}">{{p.category}}</a>
+
+            <span class="card-tags">{{p.city}}</span>
+            <a href="{% url  'OwnerPetdetail' p.owner  %}">{{p.owner}}</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+     
+    </div>
+  </div>
+</div>
+{% endblock content %}

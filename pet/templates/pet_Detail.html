@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static i18n thumbnail %}
+{% block content %}
+<div class="card-body">
+    {% if user.is_authenticated and object.owner%}
+
+
+    <a href="{%url 'pet_edit' object.id  %}" class='btn btn-danger'>edit</a>
+
+    {% endif %}
+    <div class="row col-md-6">
+        <div class="card text text-center pd-3 pt-5">
+            <img class="card-img-top" src=" {{ object.profile_picture.url}}" height='150px' width='30px' alt="">
+
+            <h4 class="card-title">
+                {{ object.name}}
+
+            </h4>
+            <p class="card-text">{{ object.description}}
+            </p>
+            <p class="span">{{ object.size}}
+            </p>
+            <p class="card-text">{{ object.city}}
+            </p>
+            <p class="card-text">{{ object.category}}
+            </p>
+            <p class="card-text">{{ object.Bread}}
+            </p>
+
+            <a href="{% url 'OwnerPetdetail' object.owner %} ">{{ object.owner}}
+            </a>
+            <p class="card-text">{{ object.slug}}
+
+            </p>
+        </div>
+        <div class="col-sm-1-12">
+        </div>
+    </div>
+</div>
+</div>
+
+
+{% endblock content %}

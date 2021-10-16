@@ -1,0 +1,757 @@
+name,code
+Agartala,32
+Ambasa,32
+Bampurbari,32
+Belonia,32
+Dhalai,32
+Dharam Nagar,32
+Kailashahar,32
+Kamal Krishnabari,32
+Khopaiyapara,32
+Khowai,32
+Phuldungsei,32
+Radha Kishore Pur,32
+Tripura,32
+Chennai,31
+Chidambaram,31
+Chingleput,31
+Coimbatore,31
+Courtallam,31
+Cuddalore,31
+Dharmapuri,31
+Dindigul,31
+Erode,31
+Hosur,31
+Kanchipuram,31
+Kanyakumari,31
+Karaikudi,31
+Karur,31
+Kodaikanal,31
+Kovilpatti,31
+Krishnagiri,31
+Kumbakonam,31
+Madurai,31
+Mayiladuthurai,31
+Nagapattinam,31
+Nagarcoil,31
+Namakkal,31
+Neyveli,31
+Nilgiris,31
+Ooty,31
+Palani,31
+Perambalur,31
+Pollachi,31
+Pudukkottai,31
+Rajapalayam,31
+Ramanathapuram,31
+Salem,31
+Sivaganga,31
+Sivakasi,31
+Thanjavur,31
+Theni,31
+Thoothukudi,31
+Tiruchirappalli,31
+Tirunelveli,31
+Tirupur,31
+Tiruvallur,31
+Tiruvannamalai,31
+Tiruvarur,31
+Trichy,31
+Tuticorin,31
+Vellore,31
+Villupuram,31
+Virudhunagar,31
+Yercaud,31
+Barmiak,30
+Be,30
+Bhurtuk,30
+Chhubakha,30
+Chidam,30
+Chubha,30
+Chumikteng,30
+Dentam,30
+Dikchu,30
+Dzongri,30
+Gangtok,30
+Gauzing,30
+Gyalshing,30
+Hema,30
+Kerung,30
+Lachen,30
+Lachung,30
+Lema,30
+Lingtam,30
+Lungthu,30
+Mangan,30
+Namchi,30
+Namthang,30
+Nanga,30
+Nantang,30
+Naya Bazar,30
+Padamachen,30
+Pakhyong,30
+Pemayangtse,30
+Phensang,30
+Rangli,30
+Rinchingpong,30
+Sakyong,30
+Samdong,30
+Singtam,30
+Siniolchu,30
+Sombari,30
+Soreng,30
+Sosing,30
+Tekhug,30
+Temi,30
+Tsetang,30
+Tsomgo,30
+Tumlong,30
+Yangang,30
+Yumtang,30
+Ajmer,29
+Alwar,29
+Banswara,29
+Baran,29
+Barmer,29
+Bharatpur,29
+Bhilwara,29
+Bikaner,29
+Bundi,29
+Chittorgarh,29
+Churu,29
+Dausa,29
+Dholpur,29
+Dungarpur,29
+Hanumangarh,29
+Jaipur,29
+Jaisalmer,29
+Jalore,29
+Jhalawar,29
+Jhunjhunu,29
+Jodhpur,29
+Karauli,29
+Kota,29
+Nagaur,29
+Pali,29
+Pilani,29
+Rajsamand,29
+Sawai Madhopur,29
+Sikar,29
+Sirohi,29
+Sri Ganganagar,29
+Tonk,29
+Udaipur,29
+Amritsar,28
+Barnala,28
+Bathinda,28
+Faridkot,28
+Fatehgarh Sahib,28
+Ferozepur,28
+Gurdaspur,28
+Hoshiarpur,28
+Jalandhar,28
+Kapurthala,28
+Ludhiana,28
+Mansa,28
+Moga,28
+Muktsar,28
+Nawanshahr,28
+Pathankot,28
+Patiala,28
+Rupnagar,28
+Sangrur,28
+SAS Nagar,28
+Tarn Taran,28
+Bahur,27
+Karaikal,27
+Mahe,27
+Pondicherry,27
+Purnankuppam,27
+Valudavur,27
+Villianur,27
+Yanam,27
+Angul,26
+Balangir,26
+Balasore,26
+Baleswar,26
+Bargarh,26
+Berhampur,26
+Bhadrak,26
+Bhubaneswar,26
+Boudh,26
+Cuttack,26
+Deogarh,26
+Dhenkanal,26
+Gajapati,26
+Ganjam,26
+Jagatsinghapur,26
+Jajpur,26
+Jharsuguda,26
+Kalahandi,26
+Kandhamal,26
+Kendrapara,26
+Kendujhar,26
+Khordha,26
+Koraput,26
+Malkangiri,26
+Mayurbhanj,26
+Nabarangapur,26
+Nayagarh,26
+Nuapada,26
+Puri,26
+Rayagada,26
+Rourkela,26
+Sambalpur,26
+Subarnapur,26
+Sundergarh,26
+Dimapur,25
+Kohima,25
+Mokokchung,25
+Mon,25
+Phek,25
+Tuensang,25
+Wokha,25
+Zunheboto,25
+Aizawl,24
+Champhai,24
+Kolasib,24
+Lawngtlai,24
+Lunglei,24
+Mamit,24
+Saiha,24
+Serchhip,24
+East Garo Hills,23
+East Khasi Hills,23
+Jaintia Hills,23
+Ri Bhoi,23
+Shillong,23
+South Garo Hills,23
+West Garo Hills,23
+West Khasi Hills,23
+Bishnupur,22
+Chandel,22
+Churachandpur,22
+Imphal East,22
+Imphal West,22
+Senapati,22
+Tamenglong,22
+Thoubal,22
+Ukhrul,22
+Ahmednagar,21
+Akola,21
+Amravati,21
+Aurangabad,21
+Beed,21
+Bhandara,21
+Buldhana,21
+Chandrapur,21
+Dhule,21
+Gadchiroli,21
+Gondia,21
+Hingoli,21
+Jalgaon,21
+Jalna,21
+Kolhapur,21
+Latur,21
+Mahabaleshwar,21
+Mumbai,21
+Mumbai City,21
+Mumbai Suburban,21
+Nagpur,21
+Nanded,21
+Nandurbar,21
+Nashik,21
+Osmanabad,21
+Parbhani,21
+Pune,21
+Raigad,21
+Ratnagiri,21
+Sangli,21
+Satara,21
+Sholapur,21
+Sindhudurg,21
+Thane,21
+Wardha,21
+Washim,21
+Yavatmal,21
+Anuppur,20
+Ashoknagar,20
+Balaghat,20
+Barwani,20
+Betul,20
+Bhind,20
+Bhopal,20
+Burhanpur,20
+Chhatarpur,20
+Chhindwara,20
+Damoh,20
+Datia,20
+Dewas,20
+Dhar,20
+Dindori,20
+Guna,20
+Gwalior,20
+Harda,20
+Hoshangabad,20
+Indore,20
+Jabalpur,20
+Jagdalpur,20
+Jhabua,20
+Katni,20
+Khandwa,20
+Khargone,20
+Mandla,20
+Mandsaur,20
+Morena,20
+Narsinghpur,20
+Neemuch,20
+Panna,20
+Raisen,20
+Rajgarh,20
+Ratlam,20
+Rewa,20
+Sagar,20
+Satna,20
+Sehore,20
+Seoni,20
+Shahdol,20
+Shajapur,20
+Sheopur,20
+Shivpuri,20
+Sidhi,20
+Tikamgarh,20
+Ujjain,20
+Umaria,20
+Vidisha,20
+Agatti Island,19
+Bingaram Island,19
+Bitra Island,19
+Chetlat Island,19
+Kadmat Island,19
+Kalpeni Island,19
+Kavaratti Island,19
+Kiltan Island,19
+Lakshadweep Sea,19
+Minicoy Island,19
+North Island,19
+South Island,19
+Alappuzha,18
+Alleppey,18
+Alwaye,18
+Ernakulam,18
+Idukki,18
+Kannur,18
+Kasargod,18
+Kochi,18
+Kollam,18
+Kottayam,18
+Kovalam,18
+Kozhikode,18
+Malappuram,18
+Palakkad,18
+Pathanamthitta,18
+Perumbavoor,18
+Thiruvananthapuram,18
+Thrissur,18
+Trichur,18
+Trivandrum,18
+Wayanad,18
+Bagalkot,17
+Bangalore,17
+Bangalore Rural,17
+Belgaum,17
+Bellary,17
+Bhatkal,17
+Bidar,17
+Bijapur,17
+Chamrajnagar,17
+Chickmagalur,17
+Chikballapur,17
+Chitradurga,17
+Dakshina Kannada,17
+Davanagere,17
+Dharwad,17
+Gadag,17
+Gulbarga,17
+Hampi,17
+Hassan,17
+Haveri,17
+Hospet,17
+Karwar,17
+Kodagu,17
+Kolar,17
+Koppal,17
+Madikeri,17
+Mandya,17
+Mangalore,17
+Manipal,17
+Mysore,17
+Raichur,17
+Shimoga,17
+Sirsi,17
+Sringeri,17
+Srirangapatna,17
+Tumkur,17
+Udupi,17
+Uttara Kannada,17
+Bokaro,16
+Chatra,16
+Deoghar,16
+Dhanbad,16
+Dumka,16
+East Singhbhum,16
+Garhwa,16
+Giridih,16
+Godda,16
+Gumla,16
+Hazaribag,16
+Jamtara,16
+Koderma,16
+Latehar,16
+Lohardaga,16
+Pakur,16
+Palamu,16
+Ranchi,16
+Sahibganj,16
+Seraikela,16
+Simdega,16
+West Singhbhum,16
+Anantnag,15
+Baramulla,15
+Budgam,15
+Doda,15
+Jammu,15
+Kargil,15
+Kathua,15
+Kupwara,15
+Leh,15
+Poonch,15
+Pulwama,15
+Rajauri,15
+Srinagar,15
+Udhampur,15
+Bilaspur,14
+Chamba,14
+Dalhousie,14
+Hamirpur,14
+Kangra,14
+Kinnaur,14
+Kullu,14
+Lahaul & Spiti,14
+Mandi,14
+Shimla,14
+Sirmaur,14
+Solan,14
+Una,14
+Ambala,13
+Bhiwani,13
+Faridabad,13
+Fatehabad,13
+Gurgaon,13
+Hisar,13
+Jhajjar,13
+Jind,13
+Kaithal,13
+Karnal,13
+Kurukshetra,13
+Mahendragarh,13
+Mewat,13
+Panchkula,13
+Panipat,13
+Rewari,13
+Rohtak,13
+Sirsa,13
+Sonipat,13
+Yamunanagar,13
+Ahmedabad,12
+Amreli,12
+Anand,12
+Banaskantha,12
+Baroda,12
+Bharuch,12
+Bhavnagar,12
+Dahod,12
+Dang,12
+Dwarka,12
+Gandhinagar,12
+Jamnagar,12
+Junagadh,12
+Kheda,12
+Kutch,12
+Mehsana,12
+Nadiad,12
+Narmada,12
+Navsari,12
+Panchmahals,12
+Patan,12
+Porbandar,12
+Rajkot,12
+Sabarkantha,12
+Surat,12
+Surendranagar,12
+Vadodara,12
+Valsad,12
+Vapi,12
+Canacona,11
+Candolim,11
+Chinchinim,11
+Cortalim,11
+Goa,11
+Jua,11
+Madgaon,11
+Mahem,11
+Mapuca,11
+Marmagao,11
+Panji,11
+Ponda,11
+Sanvordem,11
+Terekhol,11
+Central Delhi,10
+East Delhi,10
+New Delhi,10
+North Delhi,10
+North East Delhi,10
+North West Delhi,10
+Old Delhi,10
+South Delhi,10
+South West Delhi,10
+West Delhi,10
+Brancavare,9
+Dagasi,9
+Daman,9
+Diu,9
+Magarvara,9
+Nagwa,9
+Pariali,9
+Passo Covo,9
+Amal,8
+Amli,8
+Bedpa,8
+Chikhli,8
+Dadra & Nagar Haveli,8
+Dahikhed,8
+Dolara,8
+Galonda,8
+Kanadi,8
+Karchond,8
+Khadoli,8
+Kharadpada,8
+Kherabari,8
+Kherdi,8
+Kothar,8
+Luari,8
+Mashat,8
+Rakholi,8
+Rudana,8
+Saili,8
+Sili,8
+Silvassa,8
+Sindavni,8
+Udva,8
+Umbarkoi,8
+Vansda,8
+Vasona,8
+Velugam,8
+Bastar,7
+Bhilai,7
+Bijapur,7
+Bilaspur,7
+Dhamtari,7
+Durg,7
+Janjgir-Champa,7
+Jashpur,7
+Kabirdham-Kawardha,7
+Korba,7
+Korea,7
+Mahasamund,7
+Narayanpur,7
+Norh Bastar-Kanker,7
+Raigarh,7
+Raipur,7
+Rajnandgaon,7
+South Bastar-Dantewada,7
+Surguja,7
+Chandigarh,6
+Mani Marja,6
+Araria,5
+Aurangabad,5
+Banka,5
+Begusarai,5
+Bhagalpur,5
+Bhojpur,5
+Buxar,5
+Darbhanga,5
+East Champaran,5
+Gaya,5
+Gopalganj,5
+Jamshedpur,5
+Jamui,5
+Jehanabad,5
+Kaimur Bhabua),5
+Katihar,5
+Khagaria,5
+Kishanganj,5
+Lakhisarai,5
+Madhepura,5
+Madhubani,5
+Munger,5
+Muzaffarpur,5
+Nalanda,5
+Nawada,5
+Patna,5
+Purnia,5
+Rohtas,5
+Saharsa,5
+Samastipur,5
+Saran,5
+Sheikhpura,5
+Sheohar,5
+Sitamarhi,5
+Siwan,5
+Supaul,5
+Vaishali,5
+West Champaran,5
+Barpeta,4
+Bongaigaon,4
+Cachar,4
+Darrang,4
+Dhemaji,4
+Dhubri,4
+Dibrugarh,4
+Goalpara,4
+Golaghat,4
+Guwahati,4
+Hailakandi,4
+Jorhat,4
+Kamrup,4
+Karbi Anglong,4
+Karimganj,4
+Kokrajhar,4
+Lakhimpur,4
+Marigaon,4
+Nagaon,4
+Nalbari,4
+North Cachar Hills,4
+Silchar,4
+Sivasagar,4
+Sonitpur,4
+Tinsukia,4
+Udalguri,4
+Anjaw,3
+Changlang,3
+Dibang Valley,3
+East Kameng,3
+East Siang,3
+Itanagar,3
+Kurung Kumey,3
+Lohit,3
+Lower Dibang Valley,3
+Lower Subansiri,3
+Papum Pare,3
+Tawang,3
+Tirap,3
+Upper Siang,3
+Upper Subansiri,3
+West Kameng,3
+West Siang,3
+Adilabad,2
+Anantapur,2
+Chittoor,2
+Cuddapah,2
+East Godavari,2
+Guntur,2
+Hyderabad,2
+Karimnagar,2
+Khammam,2
+Krishna,2
+Kurnool,2
+Mahabubnagar,2
+Medak,2
+Nalgonda,2
+Nellore,2
+Nizamabad,2
+Prakasam,2
+Rangareddy,2
+Srikakulam,2
+Visakhapatnam,2
+Vizianagaram,2
+Warangal,2
+West Godavari,2
+Alipur,1
+Andaman Island,1
+Anderson Island,1
+Arainj-Laka-Punga,1
+Austinabad,1
+Bamboo Flat,1
+Barren Island,1
+Beadonabad,1
+Betapur,1
+Bindraban,1
+Bonington,1
+Brookesabad,1
+Cadell Point,1
+Calicut,1
+Chetamale,1
+Cinque Islands,1
+Defence Island,1
+Digilpur,1
+Dolyganj,1
+Flat Island,1
+Geinyale,1
+Great Coco Island,1
+Haddo,1
+Havelock Island,1
+Henry Lawrence Island,1
+Herbertabad,1
+Hobdaypur,1
+Ilichar,1
+Ingoie,1
+Inteview Island,1
+Jangli Ghat,1
+Jhon Lawrence Island,1
+Karen,1
+Kartara,1
+KYD Islannd,1
+Landfall Island,1
+Little Andmand,1
+Little Coco Island,1
+Long Island,1
+Maimyo,1
+Malappuram,1
+Manglutan,1
+Manpur,1
+Mitha Khari,1
+Neill Island,1
+Nicobar Island,1
+North Brother Island,1
+North Passage Island,1
+North Sentinel Island,1
+Nothen Reef Island,1
+Outram Island,1
+Pahlagaon,1
+Palalankwe,1
+Passage Island,1
+Phaiapong,1
+Phoenix Island,1
+Port Blair,1
+Preparis Island,1
+Protheroepur,1
+Rangachang,1
+Rongat,1
+Rutland Island,1
+Sabari,1
+Saddle Peak,1
+Shadipur,1
+Smith Island,1
+Sound Island,1
+South Sentinel Island,1
+Spike Island,1
+Tarmugli Island,1
+Taylerabad,1
+Titaije,1
+Toibalawe,1
+Tusonabad,1
+West Island,1
+Wimberleyganj,1
+Yadita,1
+,

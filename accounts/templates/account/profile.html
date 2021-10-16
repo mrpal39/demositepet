@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load i18n static compress %}
+
+
+{% block content %}
+<div class="row">
+  {{ object.name }}
+  <div class="col-md-12">
+
+    <h4>{% trans 'Contacts' %}</h4>
+    <ul class="list-unstyled">
+      {% if object.facebook %}
+      <li>
+        <a href="{{ object.facebook }}">Facebook</a>
+      </li>
+      {% endif %}
+      <li>
+        {% trans 'Name' %} <i class="fa fa-envelope"></i>: <a href="{{ object.firstname }}">{{ object.first_name }}</a>
+      </li> <li>
+        {% trans 'lastname' %} <i class="fa fa-envelope"></i>: <a href="{{ object.lastname }}">{{ object.last_name }}</a>
+      </li> <li>
+        {% trans 'usernmae' %} <i class="fa fa-envelope"></i>: <a href="{{ object.username }}">{{ object.username }}</a>
+      </li> 
+      
+      <li>
+        {% trans 'Email' %} <i class="fa fa-envelope"></i>: <a href="mailto:{{ object.email }}">{{ object.email }}</a>
+      </li>
+
+      {% if object.phone %}
+      <li>
+        {% trans 'Phone' %} <i class="fa fa-phone"></i>: {{ object.phone }}
+      </li>
+      {% endif %}
+    </ul>
+    {% if user.is_authenticated and user.id == object.id %}
+    <a href="{% url 'edit' %}" class="btn btn-primary">{% trans 'Edit' %}</a>
+    {% endif %}
+
+    <h4>{% trans 'Registered pets' %}</h4>
+    {% include 'pets_list.html' %}
+  </div>
+</div>
+{% endblock content %}

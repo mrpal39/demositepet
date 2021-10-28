@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,re_path
 from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import handler404
@@ -15,7 +15,8 @@ urlpatterns = [
     path('accounts/',include('accounts.urls')),
     path('',home_page,name='homepage'),
     path('pet/',include('pet.urls'),name='homepage'),
-    path("api/",apiView,name='apiView')
+    path("api/",apiView,name='apiView'),
+    re_path(r'^filer/', include('filer.urls')),
 
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

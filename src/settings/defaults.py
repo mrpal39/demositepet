@@ -11,6 +11,8 @@ ALLOWED_HOSTS = ['https://secret-wildwood-57375.herokuapp.com',
 
 
 DJANGO_APPS = (
+    'bootstrap_admin',
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -30,12 +32,22 @@ THIRD_PARTS_APPS = (
     "password_reset",
     "rest_framework",
     "social_django",
+    'filer',
+    'mptt',
 )
 
 PROJECT_APPS = ("accounts",  "pet", "cities")
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTS_APPS
-
+THUMBNAIL_HIGH_RESOLUTION = True
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
+FILER_CANONICAL_URL = 'sharing/'
 
 SITE_ID = 1
 
@@ -85,7 +97,7 @@ TEMPLATES = [
     }
 ]
 
-
+BOOTSTRAP_ADMIN_SIDEBAR_MENU = False
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
 )

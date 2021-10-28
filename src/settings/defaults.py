@@ -1,5 +1,5 @@
 import os
-
+import django_heroku
 import raven
 from decouple import config
 from dj_database_url import parse as db_url
@@ -164,3 +164,4 @@ FILE_UPLOAD_HANDLERS = ["django.core.files.uploadhandler.MemoryFileUploadHandler
                         "django.core.files.uploadhandler.TemporaryFileUploadHandler"]
 AUTH_USER_MODEL = "accounts.OwnerProfile"
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+django_heroku.settings(locals())

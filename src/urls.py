@@ -17,6 +17,7 @@ urlpatterns = [
     path('pet/',include('pet.urls'),name='homepage'),
     path("api/",apiView,name='apiView'),
     re_path(r'^filer/', include('filer.urls')),
+    path('api-auth/', include('rest_framework.urls'))
 
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

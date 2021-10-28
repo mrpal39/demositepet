@@ -2,25 +2,26 @@
 from .defaults import *
 ### other development-specific stuff
 
-# 
+# import os
 import os
-import django_heroku
+
+
 
 import environ
 env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
-# SECRET_KEY=django-insecure-3za4=9d#hdzvkci@28nub9wgq2-y@q^z(l58t&tfq7z8xanhok
+SECRET_KEY='django-insecure-3za4=9d#hdzvkci@28nub9wgq2-y@q^z(l58t&tfq7z8xanhok'
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+# SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG =  env('DEBUG')
-
+DEBUG = False
 
 
 STATIC_URL = "/static/"
@@ -30,8 +31,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "../static"),)
 
 # static root folder, where static files will be collected to
 default_static_root = os.path.join(BASE_DIR, "../../static_root")
-STATIC_ROOT = config("STATIC_ROOT", default=default_static_root)
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOCALE_PATHS = [os.path.join(BASE_DIR, "../locale")]
 
 
@@ -72,6 +72,3 @@ DATABASES = {
     # },
 }
 
-# DATABASE_ROUTERS = ['routers.routing.AuthRouter',
-#                     'routers.routing.PrimaryReplicaRouter']
-django_heroku.settings(locals())

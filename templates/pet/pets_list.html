@@ -1,0 +1,22 @@
+<div class="row  mx-5 my-5 col-x ">
+
+  {% for pet in pets %}
+  <div class="col-lg-4 col-sm-6 ">
+    <!-- <h4 class="card">{{p.owner}}</h4> -->
+    <div class="card card-body pd-2 mb-5">
+      <img class="card-img-top" src="{{pet.profile_picture.url}}" height="120px" width="150px" alt="" />
+
+      <a href="{% url 'pet_Detail' pet.pk pet.slug%}"></a>
+      <h4 class="card-title">{{pet.name}}</h4>
+      <p class="card-text">{{pet.description}}</p>
+      <p class="card-tags">{{pet.bread}}</p>
+
+      <p class="card-tags">{{pet.category.id}}</p>
+      <a href="{% url  'petCategoryIn' pet.category.id %}">{{pet.category}}</a>
+
+      <b class="card-tags">{{pet.city}}</b>
+      <a href="{% url  'OwnerPetdetail' pet.owner  %}">{{p.owner}}</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>

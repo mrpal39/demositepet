@@ -39,7 +39,7 @@ THIRD_PARTS_APPS = (
 
 )
 
-PROJECT_APPS = ("accounts",  "pet", "cities")
+PROJECT_APPS = ("accounts",  "pet", "cities","common")
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTS_APPS
 THUMBNAIL_HIGH_RESOLUTION = True
@@ -79,7 +79,7 @@ PROJECT_TEMPLATE_LOADERS = [
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": (BASE_DIR, "../templates"),
+        "DIRS": (BASE_DIR, "templates"),
         "OPTIONS": {
             "context_processors": [
                 "django.contrib.auth.context_processors.auth",

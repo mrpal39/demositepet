@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import handler404
 from django.urls.conf import include
-from pet.views import home_page,apiView
+from common.views import home_page,apiView
 from events.admin import event_admin_site
 
 

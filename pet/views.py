@@ -21,26 +21,11 @@ from .forms import PetForm
 from.models import Category, Pet
 
 
-def apiView(request):
-    return render(request, 'api.html')
-
-
-def home_page(request):
-
-
-
-    context = {'pets': Pet.objects.all(),
-               }
-    return render(request, 'homepage.html', context)
-
 def pet_list(request):
-
-
-
     context = {'pets': Pet.objects.all(),
                'state': 'state_cat',
                }
-    return render(request, 'pet_list.html', context)
+    return render(request, 'pet/pet_list.html', context)
 
 def OwnerPetdetail(request, owner):
 
@@ -52,7 +37,7 @@ def OwnerPetdetail(request, owner):
         'userinfo': userInfo,
         'UserPets': UserPets,
     }
-    return render(request, 'OwnerPetDetail.html', context)
+    return render(request, 'pet/OwnerPetDetail.html', context)
 
 
 def petCategoryIn(request, pk):
@@ -68,13 +53,13 @@ def petCategoryIn(request, pk):
         'dd': dd
     }
 
-    return render(request, 'petcategory.html', context)
+    return render(request, 'pet/petcategory.html', context)
 
 
 class EditPetView(UpdateView):
     model = Pet
     form_class = PetForm
-    template_name = "edit.html"
+    template_name = "pet/edit.html"
     success_url = 'pet_detail'
 
     def get(self, request, *args, **kwargs):
@@ -90,7 +75,7 @@ class EditPetView(UpdateView):
 
 class PetDetail(DetailView):
     model = Pet
-    template_name = 'pet_Detail.html'
+    template_name = 'pet/pet_Detail.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -123,7 +108,7 @@ class JsonableResponseMixin:
 
 
 class RegisterPetView(JsonableResponseMixin, CreateView):
-    template_name = "register_pet.html"
+    template_name = "pet/register_pet.html"
     model = Pet
     form_class = PetForm
 
@@ -155,7 +140,7 @@ class RegisterPetView(JsonableResponseMixin, CreateView):
 
 class pet_View(TemplateView):
     models=Pet  
-    template_name='pet_list.html'
+    template_name='pet/pet_list.html'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

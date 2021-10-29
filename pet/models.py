@@ -46,7 +46,7 @@ class Bread(models.Model):
 def get_slug(instance):
     city = ""
     if instance.city:
-        city = instance.city.name
+        city = instance.city
     return slugify("{}-{}".format(instance.name, city))
 
 

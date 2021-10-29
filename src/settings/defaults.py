@@ -34,6 +34,9 @@ THIRD_PARTS_APPS = (
     "social_django",
     'filer',
     'mptt',
+    
+    'storages',
+
 )
 
 PROJECT_APPS = ("accounts",  "pet", "cities")
@@ -164,4 +167,10 @@ FILE_UPLOAD_HANDLERS = ["django.core.files.uploadhandler.MemoryFileUploadHandler
                         "django.core.files.uploadhandler.TemporaryFileUploadHandler"]
 AUTH_USER_MODEL = "accounts.OwnerProfile"
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+
+
+
+
 django_heroku.settings(locals())

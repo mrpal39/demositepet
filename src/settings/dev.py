@@ -24,10 +24,7 @@ SECRET_KEY='django-insecure-3za4=9d#hdzvkci@28nub9wgq2-y@q^z(l58t&tfq7z8xanhok'
 DEBUG = False
 
 
-STATIC_URL = "/static/"
 
-# Setting static folder for site-wide files
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "../static"),)
 
 # static root folder, where static files will be collected to
 default_static_root = os.path.join(BASE_DIR, "../../static_root")
@@ -46,9 +43,36 @@ COMPRESS_OFFLINE = True
 
 # Setting media configuration
 MEDIA_URL = "/media/"
-default_media_root = os.path.join(BASE_DIR, "../../media")
+default_media_root = os.path.join(BASE_DIR, "../media")
 MEDIA_ROOT = config("MEDIA_ROOT", default=default_media_root)
+
+
+AWS_ACCESS_KEY_ID = 'AKIA4JMAYYZAM37WW2G4'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'petkennelbucket'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, '../static'),
+]
+
+
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+
+
+
+
+
 DATABASES = {
+
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'default.sqlite3',

@@ -17,7 +17,7 @@ import uuid
 import hashlib
 from cities.models import State
 from . import services
- 
+
 
 # class CategoryManager(models.Manager):
 #     def count_pets(self,  Category):
@@ -28,12 +28,12 @@ from . import services
 #         )
 
 class Category(models.Model):
-    name = models.CharField(max_length=20,unique=True)
-    
+    name = models.CharField(max_length=20, unique=True)
 
     def __str__(self):
         return self.name
-    
+
+
 class Bread(models.Model):
     name = models.CharField(max_length=50)
     Category = models.OneToOneField(Category, on_delete=models.CASCADE,
@@ -70,13 +70,12 @@ class Pet(TimeStampedModel):
     breeds = models.ForeignKey(Bread, on_delete=models.CASCADE)
     size = models.CharField(max_length=2, choices=PET_SIZE, blank=True)
     state = models.ForeignKey(State, on_delete=models.CASCADE)
-    city = models.CharField( max_length=50,null=True)
+    city = models.CharField(max_length=50, null=True)
     sex = models.CharField(max_length=2, choices=PET_SEX, blank=True)
     profile_picture = models.ImageField(
         upload_to="pet_profiles", help_text=_("Maximum image size is 8MB"))
     slug = AutoSlugField(max_length=50, populate_from=get_slug, unique=False)
-    
-  
+
     def __str__(self):
         return str(self.slug)
 
@@ -92,7 +91,6 @@ class Pet(TimeStampedModel):
     def get_size(self):
         return dict(self.PET_SIZE).get(self.size)
 
-   
     @property
     def thumb_picture(self):
         try:

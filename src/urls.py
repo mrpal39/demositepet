@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import handler404
 from django.urls.conf import include
-from common.views import home_page,apiView
+from common.views import home_page,api
 from events.admin import event_admin_site
 
 
@@ -15,7 +15,7 @@ urlpatterns = [
     path('accounts/',include('accounts.urls')),
     path('',home_page,name='homepage'),
     path('pet/',include('pet.urls'),name='homepage'),
-    path("api/",apiView,name='apiView'),
+    path("api/",api,name='apiView'),
     re_path(r'^filer/', include('filer.urls')),
     path('api-auth/', include('rest_framework.urls'))
 

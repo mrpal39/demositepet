@@ -1,3 +1,6 @@
+from rest_framework import serializers
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 from cities.models import State
 from django.db.models.aggregates import Count
 from django.views.generic.list import ListView
@@ -19,7 +22,16 @@ from django.views.decorators.http import require_POST
 from django.views.generic import DetailView, CreateView, UpdateView, TemplateView, UpdateView
 from .forms import PetForm
 from.models import Category, Pet
+from.serializers import PetSer
 
+@api_view(['GET', 'POST'])
+def apipet(request):
+
+    if request.method=="GET":
+       snip=Pet.objects.all()
+       dd=PetSer(snip).data
+       return Response(dd)
+     
 
 def pet_list(request):
     context = {'pets': Pet.objects.all(),

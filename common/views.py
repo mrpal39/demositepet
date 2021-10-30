@@ -2,9 +2,18 @@ from django.shortcuts import render
 
 # Create your views here.
 from pet.models import Pet
-def apiView(request):
-    return render(request, 'api.html')
 
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.reverse import reverse
+
+
+@api_view(['GET'])
+def api(request, format=None):
+    api_url={
+        "pet":"api",
+    }
+    return Response(api_url)
 
 def home_page(request):
 

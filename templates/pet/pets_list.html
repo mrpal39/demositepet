@@ -1,22 +1,30 @@
+{% load static %}
+
+
 <div class="row  mx-5 my-5 col-x ">
 
   {% for pet in pets %}
-  <div class="col-lg-4 col-sm-6 ">
-    <!-- <h4 class="card">{{p.owner}}</h4> -->
-    <div class="card card-body pd-2 mb-5">
-      <img class="card-img-top" src="{{pet.profile_picture.url}}" height="120px" width="150px" alt="" />
 
-      <a href="{% url 'pet_Detail' pet.pk pet.slug%}"></a>
-      <h4 class="card-title">{{pet.name}}</h4>
-      <p class="card-text">{{pet.description}}</p>
-      <p class="card-tags">{{pet.bread}}</p>
+  <div class="col-lg-4 ms-auto mt-lg-0 mt-4 pb-5">
+    <div class="card">
+      <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+        <a class="d-block blur-shadow-image">
+          <img src="{{pet.profile_picture.url}}" alt="img-colored-shadow" class="img-fluid border-radius-lg">
+        </a>
+      </div>
+      <div class="card-body text-center">
+        <h5 class="font-weight-normal">
+          <a href="javascript:;">Get insights on Search</a>
+        </h5>
+        <p class="mb-0">
+          {{pet.description}}
+        </p> <a href="{% url 'pet_Detail' pet.pk pet.slug%}">
 
-      <p class="card-tags">{{pet.category.id}}</p>
-      <a href="{% url  'petCategoryIn' pet.category.id %}">{{pet.category}}</a>
-
-      <b class="card-tags">{{pet.city}}</b>
-      <a href="{% url  'OwnerPetdetail' pet.owner  %}">{{p.owner}}</a>
+          <button type="button" class="btn bg-gradient-info btn-sm mb-0 mt-3">Find out more</button>
+        </a>
+      </div>
     </div>
   </div>
+
   {% endfor %}
 </div>

@@ -24,20 +24,22 @@ from .forms import PetForm
 from.models import Category, Pet
 from.serializers import PetSer
 
+
 @api_view(['GET', 'POST'])
 def apipet(request):
 
-    if request.method=="GET":
-       snip=Pet.objects.all()
-       dd=PetSer(snip).data
-       return Response(dd)
-     
+    if request.method == "GET":
+        snip = Pet.objects.all()
+        dd = PetSer(snip).data
+        return Response(dd)
+
 
 def pet_list(request):
     context = {'pets': Pet.objects.all(),
                'state': 'state_cat',
                }
-    return render(request, 'pet/pet_list.html', context)
+    return render(request, 'pet/pets.html', context)
+
 
 def OwnerPetdetail(request, owner):
 
@@ -119,7 +121,7 @@ class JsonableResponseMixin:
 # p        et creater
 
 
-class RegisterPetView(JsonableResponseMixin, CreateView):
+class RegisterPetView(LoginRequiredMixin, CreateView):
     template_name = "pet/register_pet.html"
     model = Pet
     form_class = PetForm
@@ -149,19 +151,14 @@ class RegisterPetView(JsonableResponseMixin, CreateView):
         return super(RegisterPetView, self).form_valid(form)
 
 
-
 class pet_View(TemplateView):
-    models=Pet  
-    template_name='pet/pet_list.html'
-    
+    models = Pet
+    template_name = 'pet/pet_list.html'
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["ggg"] = self.object.all() 
+        context["ggg"] = self.object.all()
         return context
-        
-    
-    
+
     def get_queryset(self):
         return super().get_queryset()
-    
-    

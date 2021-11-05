@@ -21,4 +21,8 @@ def home_page(request):
 
     context = {'pets': Pet.objects.all(),
                }
-    return render(request, 'homepage.html', context)
+    return render(request, '_layout/base.html', context)
+def index(request):
+
+
+    return render(request, '_layout/base_copy.html')

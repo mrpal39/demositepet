@@ -4,7 +4,7 @@ from . import views
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
-    path("s/<str:owner>/", views.OwnerPetdetail, name="OwnerPetdetail"),
+    path("<str:owner>", views.OwnerPetdetail, name="OwnerPetdetail"),
 
     path('',views.pet_list,name='pet_list'),
 

@@ -20,8 +20,10 @@ from django.urls import reverse
 from django.utils.translation import ugettext as _
 from django.views.decorators.http import require_POST
 from django.views.generic import DetailView, CreateView, UpdateView, TemplateView, UpdateView
+
+from kennels.models import Kennel
 from .forms import PetForm
-from.models import Category, Pet
+from.models import Bread, Category, Pet
 from.serializers import PetSer
 
 
@@ -43,13 +45,19 @@ def pet_list(request):
 
 def OwnerPetdetail(request, owner):
 
-    userInfo = OwnerProfile.objects.get(username=owner)
-    # print(userInfo.id)
-    UserPets = Pet.objects.all().filter(owner_id=userInfo.id)
+    userobject = OwnerProfile.objects.get(username=owner)
+    
+
+    kennelobject=Kennel.objects.get(breeder_id=userobject.id)
+
+    petobject = Pet.objects.all().filter(kennel_id=kennelobject)
+    print(kennelobject)
+    
     # print(UserPets)
     context = {
-        'userinfo': userInfo,
-        'UserPets': UserPets,
+        'userinfo': userobject,
+        'UserPets': petobject,
+        'kennelobject':kennelobject
     }
     return render(request, 'pet/OwnerPetDetail.html', context)
 

@@ -7,7 +7,7 @@ urlpatterns = [
     path("", views.CreateUserView.as_view(), name="create"),
     # path("profile/d/", views.ProfileDetailView.as_view(), name="user_profile"),
     path("profile/<int:id>/", views.UserProfileView.as_view(), name="user_profile"),
-    path("profile/edit/", views.EditUserProfileView.as_view(), name="edit"),
+#     path("profile/edit/", views.EditUserProfileView.as_view(), name="edit"),
    
     path("login/", views.UserLogin.as_view(), name="login"),
     path("logout/", LogoutView.as_view(template_name='account/logout.html'), name="logout"),

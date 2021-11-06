@@ -74,59 +74,6 @@ class RegisterForm(UserForm):
         return user
 
 
-# class UpdateKennelForm(forms.ModelForm):
-#     class Meta:
-#         model = Kennel
-#         fields = (
-#             'kennel_name','kennel_description',
-#             'kennel_addres',
-#             'kennel_state',
-#             'kennel_contact',
-#             'kennel_social',
-#         )
-
-#     def __init__(self, *args, **kwargs):
-#         super(UpdateKennelForm, self).__init__(*args, **kwargs)
-#         self.helper = FormHelper()
-#         self.fields["kennel_name"].required = True
-#         self.fields["kennel_description"].required = True
-#         self.fields["kennel_addres"].required = True
-#         self.fields["kennel_state"].widget.attrs.update({"class": "form-control"})
-#         self.fields["kennel_contact"].widget.attrs.update({"class": "form-control"})
-#         self.fields["kennel_social"].widget.attrs.update({"class": "form-control"})
-
-
-#         self.helper.add_input(Submit("submit", _("Save Changes")))
-    
-
-#     def save(self, commit=True):
-#         user = super(UpdateKennelForm, self).save(commit=False)
-#         user=self.request.user
-#         if commit:
-#             user.save()
-#         return user
-
-
-class UpdateUserForm(UserForm):
-    class Meta:
-        model = OwnerProfile
-        fields = ("first_name", "last_name", "email", "phone","kennel_name","kennel_social","kennel_contact","kennel_state","kennel_description",'kennel_addres',)
-
-    def __init__(self, *args, **kwargs):
-        super(UpdateUserForm, self).__init__(*args, **kwargs)
-
-        self.fields["kennel_name"].required = True
-        self.fields["kennel_description"].required = True
-        self.fields["kennel_addres"].required = True
-        self.fields["kennel_state"].widget.attrs.update({"class": "form-control"})
-        self.fields["kennel_contact"].widget.attrs.update({"class": "form-control"})
-        self.fields["kennel_social"].widget.attrs.update({"class": "form-control"})
-
-        self.helper.add_input(Submit("submit", _("Save Changes")))
-
-    def save(self, commit=True):
-        self.instance.is_information_confirmed = True
-        super(UpdateUserForm, self).save()
 
 
 class UsersPasswordRecoveryForm(PasswordRecoveryForm):

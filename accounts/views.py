@@ -15,7 +15,6 @@ from django.views.generic import CreateView, DetailView, TemplateView, UpdateVie
 from .forms import (
     LoginForm,
     RegisterForm,
-    UpdateUserForm,
     UsersPasswordRecoveryForm,
     UsersPasswordResetForm,
 )
@@ -80,40 +79,6 @@ class CreateUserView(CreateView):
         return reverse("homepage")
 
 
-class EditUserProfileView(LoginRequiredMixin, UpdateView):
-    template_name = "account/edit_profile.html"
-    model = OwnerProfile
-    form_class = UpdateUserForm
-
-    def get_success_url(self):
-        messages.success(self.request, _("Changes saved successfully."))
-        return reverse("homepage")
-
-    def get_object(self ):
-        return (self.request.user)
-
-# class EditkannelProfileView(LoginRequiredMixin, UpdateView):
-#     template_name = "account/edit_profile.html"
-#     model = Kennel
-#     form_class = UpdateKennelForm
-
-#     def get_success_url(self):
-#         messages.success(self.request, _("Changes saved successfully."))
-#         return reverse("homepage")
-
-   
-#     # def get_object(self ):
-#         # return (self.request.user)
-#     # def get(self, request, *args, **kwargs):
-#     #         current_pet = self.get_object()
-#     #     if request.user == current_pet.owner:
-#     #         return super(EditPetView, self).get(request, *args, **kwargs)
-#     #     else:
-#     #         return HttpResponseRedirect(reverse("detail", kwargs={"pk": current_pet.pk}))
-
-#     def form_valid(self, form):
-#         return super(EditkannelProfileView, self).form_valid(form)
-
     
 class UserLogin(LoginView):
     form_class = LoginForm
@@ -129,16 +94,6 @@ class UserProfileView(TemplateView):
         context["object"] = self.request.user
         return context
 
-
-# class ProfileDetailView(DetailView):
-#     template_name = "account/profile.html"
-#     model = OwnerProfile
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context["aa"] = self.object.all()
-    #     return context
-    
     
 
 

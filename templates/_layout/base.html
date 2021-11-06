@@ -100,6 +100,38 @@
       </div>
     </div>
   </section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 mx-auto text-center mb-5">
+        <span class="badge badge-primary mb-2">pet-working</span>
+        <h2>Explore our Pet in Pet Care </h2>
+        <p>
+          If you can’t decide, the answer is no. If two equally difficult paths,
+          choose the one more painful in the short term (pain avoidance
+          is creating an illusion of equality).
+        </p>
+      </div>
+    </div>
+  
+    <div class="row min-vh-25 mt-4">
+     {% for p in  pets %}
+   
+   
+      <div class="col-sm-2 col-7 mb-sm-0 mb-2">
+
+<a href="{% url 'pet_Detail' p.id p.slug %}">
+        <div style="background-image: url(' {{ p.profile_picture.url}}')" class="w-100 h-100 border-radius-lg shadow bg-cover"></div>
+      </a>
+      
+      </div> 
+      {% endfor %}
+     
+    </div>
+  </div>
+</section>
+
   <section class="pb-5 position-relative bg-gradient-dark mx-n3">
     <div class="container">
       <div class="row">

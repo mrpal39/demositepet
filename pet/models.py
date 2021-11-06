@@ -16,20 +16,21 @@ from accounts.models import OwnerProfile
 import uuid
 import hashlib
 from cities.models import State
+from kennels.models import Kennel
 from . import services
 
 
-# class CategoryManager(models.Manager):
-#     def count_pets(self,  Category):
-#         return (
-#             self.filter(pet__category__in=Category)
-#             .annotate(num_pets=models.Count("pet"))
-#             .order_by("Category")
-#         )
+class CategoryManager(models.Manager):
+    def count_pets(self,  Category):
+        return (
+            self.filter(pet__category__in=Category)
+            .annotate(num_pets=models.Count("pet"))
+            .order_by("Category")
+        )
 
 class Category(models.Model):
     name = models.CharField(max_length=20, unique=True)
-
+    object=CategoryManager()
     def __str__(self):
         return self.name
 
@@ -69,6 +70,7 @@ class Pet(TimeStampedModel):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     breeds = models.ForeignKey(Bread, on_delete=models.CASCADE)
     size = models.CharField(max_length=2, choices=PET_SIZE, blank=True)
+    kennel=models.ForeignKey(Kennel,on_delete=models.CASCADE,blank=True)
     state = models.ForeignKey(State, on_delete=models.CASCADE)
     city = models.CharField(max_length=50, null=True)
     sex = models.CharField(max_length=2, choices=PET_SEX, blank=True)

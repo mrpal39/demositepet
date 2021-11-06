@@ -1,5 +1,6 @@
 {% load static i18n thumbnail %}
-
+<div class="row card-body ">
+  
 <form class="form-horizontal col-md-6" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
 
@@ -104,4 +105,5 @@
     <img id="picture" class="img-thumbnail" alt="{% trans 'Pet Image' %}"
          src="{% static 'img/pet-img-placeholder.png' %}"/>
   {% endif %}
+</div>
 </div>

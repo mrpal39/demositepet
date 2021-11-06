@@ -14,14 +14,7 @@ class OwnerProfile(AbstractUser):
 
     is_information_confirmed = models.BooleanField(default=False)
     phone = models.CharField("Telefone", max_length=30, blank=True)
-    kennel_name = models.CharField(max_length=200 ,default="dogkennl")
-    kennel_description = models.CharField(_("description"), max_length=200,default="dogkennl")
-    kennel_addres = models.CharField(_("address"), max_length=200,default="dogkennl")
-    kennel_state = models.CharField(_("state"), max_length=200,default="dogkennl")
-    kennel_contact = models.IntegerField(default="01235")
-    kennel_image = models.ImageField(default='default.jpg', upload_to='profile_pics')
-
-    kennel_social = models.URLField()
+  
     def get_absolute_url(self):
         return reverse("user_profile", args=[self.id])
 

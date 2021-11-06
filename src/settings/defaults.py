@@ -34,12 +34,13 @@ THIRD_PARTS_APPS = (
     "social_django",
     'filer',
     'mptt',
-    
+    "drf_yasg",
+
     'storages',
 
 )
 
-PROJECT_APPS = ("accounts",  "pet", "cities","common")
+PROJECT_APPS = ("accounts",  "pet", "cities","common",'kennels')
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTS_APPS
 THUMBNAIL_HIGH_RESOLUTION = True

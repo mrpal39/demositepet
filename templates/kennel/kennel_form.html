@@ -1,0 +1,60 @@
+{% extends "_layout/base.html" %}
+
+{% load static %}
+{% block body %}
+  {% block content %}
+  <form>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Text</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Email/label>
+      <input type="email" class="form-control">
+    </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Url</label>
+      <input type="url" class="form-control">
+    </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Phone</label>
+      <input type="tel" class="form-control">
+    </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control">
+    </div>
+    <div class="input-group input-group-outline my-3">
+      <label class="form-label">Number</label>
+      <input type="number" class="form-control">
+    </div>
+    <div class="input-group input-group-static my-3">
+      <label>Datetime</label>
+      <input type="datetime-local" class="form-control">
+    </div>
+    <div class="input-group input-group-static my-3">
+      <label>Date</label>
+      <input type="date" class="form-control">
+    </div>
+    <div class="input-group input-group-static my-3">
+      <label>Month</label>
+      <input type="month" class="form-control">
+    </div>
+    <div class="input-group input-group-static my-3">
+      <label>Week</label>
+      <input type="week" class="form-control">
+    </div>
+    <div class="input-group input-group-static my-3">
+      <label>Time</label>
+      <input type="time" class="form-control">
+    </div>
+    <div class="input-group input-group-static my-3">
+      <label>Color</label>
+      <input type="color" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="example-color-input" class="form-control-label">Color</label>
+        <input class="form-control" type="color" value="#5e72e4" id="example-color-input">
+    </div>
+</form>  {% endblock content %}
+{% endblock body %}

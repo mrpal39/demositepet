@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import handler404
 from django.urls.conf import include
-from common.views import home_page, api,index
+from common.views import home_page, api,wishList
 from events.admin import event_admin_site
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -24,7 +24,9 @@ urlpatterns = [
     path('event-admin/', event_admin_site.urls),
     path('accounts/', include('accounts.urls')),
     path('', home_page, name='homepage'),
-    path('base/', index, name='index'),
+    path('wish/', wishList, name='wishlist'),
+
+   #  path('base/', index, name='index'),
     path('k/', include('kennels.urls'), name='homepage_kennels'),
     path('pet/', include('pet.urls'), name='homepage'),
     path("api/", api, name='apiView'),

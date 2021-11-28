@@ -4,11 +4,14 @@ from . import views
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
+    path('<slug>', views.pet_detail, name='PetDetail'),
+
+    
     path("<str:owner>", views.OwnerPetdetail, name="OwnerPetdetail"),
 
     path('',views.pet_list,name='pet_list'),
 
-    path("resigter_pet", views.RegisterPetView.as_view(), name="resigter_pet"),
+    path("resigte", views.RegisterPetView.as_view(), name="resigter_pet"),
     path("edit/<pk>", views.EditPetView.as_view(), name="edit"),
     path("d/<pk>/<slug>/", views.PetDetail.as_view(), name="pet_Detail"),
     path("p/<pk>/", views.petCategoryIn, name="petCategoryIn"),

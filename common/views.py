@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from pet.models import Pet
+from pet.models import Pet,Category
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -16,13 +16,15 @@ def api(request, format=None):
     return Response(api_url)
 
 def home_page(request):
-
-
-
-    context = {'pets': Pet.objects.all(),
+    
+    context = {
+              
                }
-    return render(request, '_layout/base.html', context)
-def index(request):
+    
+    return render(request, 'index.html', context)
 
 
-    return render(request, '_layout/base_copy.html')
+def wishList(request):
+
+
+    return render(request, 'wishlist.html')

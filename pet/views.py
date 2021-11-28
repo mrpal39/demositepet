@@ -35,6 +35,16 @@ def apipet(request):
         dd = PetSer(snip).data
         return Response(dd)
 
+def pet_detail(request,slug):
+    pobject=Pet.objects.get(slug=slug)
+    print(pobject)
+    
+    content={
+        'pobject':pobject,
+    }
+    
+    return render(request,'pet/Pet_Detail.html',content)
+
 
 def pet_list(request):
     context = {'pets': Pet.objects.all(),
@@ -48,16 +58,16 @@ def OwnerPetdetail(request, owner):
     userobject = OwnerProfile.objects.get(username=owner)
     
 
-    kennelobject=Kennel.objects.get(breeder_id=userobject.id)
+    # kennelobject=Kennel.objects.get(breeder_id=userobject.id)
 
-    petobject = Pet.objects.all().filter(kennel_id=kennelobject)
-    print(kennelobject)
+    # petobject = Pet.objects.all().filter(kennel_id=kennelobject)
+    # print(kennelobject)
     
     # print(UserPets)
     context = {
         'userinfo': userobject,
-        'UserPets': petobject,
-        'kennelobject':kennelobject
+        # 'UserPets': petobject,
+        # 'kennelobject':kennelobject
     }
     return render(request, 'pet/OwnerPetDetail.html', context)
 
@@ -129,7 +139,7 @@ class JsonableResponseMixin:
 # p        et creater
 
 
-class RegisterPetView(LoginRequiredMixin, CreateView):
+class RegisterPetView(CreateView):
     template_name = "pet/register_pet.html"
     model = Pet
     form_class = PetForm

@@ -13,7 +13,7 @@ from .models import  OwnerProfile
 class LoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super(LoginForm, self).__init__(*args, **kwargs)
-        self.fields["username"].widget.attrs.update({"autofocus": "autofocus"})
+        self.fields["username"].widget.attrs.update({"autofocus": "autofocus","class": "form-control"})
         self.fields["password"].widget.attrs.update({"class": "form-control"})
 
 

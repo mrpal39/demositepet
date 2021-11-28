@@ -34,7 +34,6 @@ class Kennel(models.Model):
     name=models.CharField(_("name"), max_length=50)
     description=models.CharField(_("descriptions"), max_length=50)
 
-    breeder=models.OneToOneField(OwnerProfile,on_delete=models.CASCADE)
     breed=models.ManyToManyField(Breed)
     addr=models.CharField(_("addres"), max_length=50)
     city=models.CharField(_("city"), max_length=50)

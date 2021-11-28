@@ -31,13 +31,14 @@ class CategoryManager(models.Manager):
 class Category(models.Model):
     name = models.CharField(max_length=20, unique=True)
     object=CategoryManager()
+    
     def __str__(self):
         return self.name
 
 
 class Bread(models.Model):
     name = models.CharField(max_length=50)
-    Category = models.OneToOneField(Category, on_delete=models.CASCADE,
+    Category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                     related_name='Category')
 
     def __str__(self):

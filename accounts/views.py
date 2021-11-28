@@ -1,3 +1,5 @@
+from django.db import models
+from kennels.models import Kennel
 from pet.models import Pet
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -94,6 +96,17 @@ class UserProfileView(TemplateView):
         context["object"] = self.request.user
         return context
 
+    
+class UserDetailView(DetailView):
+    model=OwnerProfile
+    template_name="account/profile.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["obejct"] = self.request.user
+        context["kennel"] = Kennel.objects.get(username=self.request.user)
+
+        return context
     
 
 

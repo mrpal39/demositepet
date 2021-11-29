@@ -11,7 +11,6 @@ ALLOWED_HOSTS = ['https://demositepet.herokuapp.com',
 
 
 DJANGO_APPS = (
-    'bootstrap_admin',
 
     "django.contrib.admin",
     "django.contrib.auth",
@@ -102,7 +101,6 @@ TEMPLATES = [
     }
 ]
 
-BOOTSTRAP_ADMIN_SIDEBAR_MENU = False
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
 )

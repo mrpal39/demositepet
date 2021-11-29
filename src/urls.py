@@ -5,11 +5,12 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import handler404
 from django.urls.conf import include
-from common.views import home_page, api,wishList
+from common.views import *
 from events.admin import event_admin_site
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
+
 schema_view = get_schema_view(
    openapi.Info(
       title="Blog API",
@@ -19,12 +20,14 @@ schema_view = get_schema_view(
    public=True,
    permission_classes=(permissions.AllowAny,),
 )
+
 urlpatterns = [
     path('entity-admin/', admin.site.urls),
     path('event-admin/', event_admin_site.urls),
     path('accounts/', include('accounts.urls')),
     path('', home_page, name='homepage'),
     path('wish/', wishList, name='wishlist'),
+    path('search/', searchbar, name='searchbar'),
 
    #  path('base/', index, name='index'),
     path('k/', include('kennels.urls'), name='homepage_kennels'),

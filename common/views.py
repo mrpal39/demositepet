@@ -24,6 +24,10 @@ def home_page(request):
     return render(request, 'index.html', context)
 
 
+def searchbar(request,*args, **kwargs):
+    
+    return render(request, 'pet/grid-listings-filterscol-search-aside.html')
+    
 def wishList(request):
 
 

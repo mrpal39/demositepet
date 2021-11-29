@@ -37,6 +37,7 @@ def apipet(request):
 
 def pet_detail(request,slug):
     pobject=Pet.objects.get(slug=slug)
+    
     print(pobject)
     
     content={

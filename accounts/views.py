@@ -89,7 +89,7 @@ class UserLogin(LoginView):
 
 class UserProfileView(TemplateView):
     model= Pet
-    template_name = "account/profile.html"
+    template_name = "admin_section/index.html"
 
     def get_context_data(self, **kwargs):
         context = super(UserProfileView, self).get_context_data(**kwargs)
@@ -99,7 +99,7 @@ class UserProfileView(TemplateView):
     
 class UserDetailView(DetailView):
     model=OwnerProfile
-    template_name="account/profile.html"
+    template_name="admin_section/index.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

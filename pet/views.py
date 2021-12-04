@@ -36,12 +36,13 @@ def apipet(request):
         return Response(dd)
 
 def pet_detail(request,slug):
-    pobject=Pet.objects.get(slug=slug)
+    print(slug)
     
-    print(pobject)
+    # pobject=Pet.objects.get()
+    # print(pobject)
     
     content={
-        'pobject':pobject,
+        # 'pobject':pobject,
     }
     
     return render(request,'pet/Pet_Detail.html',content)
@@ -50,7 +51,7 @@ def pet_detail(request,slug):
 def pet_list(request):
     context = {'pets': Pet.objects.all(),
                'state': 'state_cat',
-               }
+               }                                                                                                                            
     return render(request, 'pet/pets.html', context)
 
 

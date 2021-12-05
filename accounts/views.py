@@ -4,7 +4,7 @@ from pet.models import Pet
 from django.shortcuts import render
 from django.http import HttpResponse
 from password_reset.views import Recover, RecoverDone, Reset, ResetDone
-from .models import  OwnerProfile
+from .models import OwnerProfile
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -21,11 +21,10 @@ from .forms import (
     UsersPasswordResetForm,
 )
 
+
 def error_404_view(request, exception):
     data = {"name": "ThePythonDjango.com"}
-    return render(request,'error_404.html', data)
-
-
+    return render(request, 'error_404.html', data)
 
 
 class RecoverView(Recover):
@@ -81,14 +80,13 @@ class CreateUserView(CreateView):
         return reverse("homepage")
 
 
-    
 class UserLogin(LoginView):
     form_class = LoginForm
     template_name = "account/login.html"
 
 
 class UserProfileView(TemplateView):
-    model= Pet
+    model = Pet
     template_name = "admin_section/index.html"
 
     def get_context_data(self, **kwargs):
@@ -96,10 +94,10 @@ class UserProfileView(TemplateView):
         context["object"] = self.request.user
         return context
 
-    
+
 class UserDetailView(DetailView):
-    model=OwnerProfile
-    template_name="admin_section/index.html"
+    model = OwnerProfile
+    template_name = "admin_section/index.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -107,8 +105,6 @@ class UserDetailView(DetailView):
         context["kennel"] = Kennel.objects.get(username=self.request.user)
 
         return context
-    
-
 
 
 def confirm_information(request):

@@ -1,4 +1,6 @@
 
+from django.views.generic import TemplateView
+from django.urls import path, include, re_path
 from django.contrib import admin
 from django.urls import path, re_path
 from django.conf.urls.static import static
@@ -17,17 +19,18 @@ urlpatterns = [
     path('', home_page, name='homepage'),
     path('wish/', wishList, name='wishlist'),
     path('search/', searchbar, name='searchbar'),
-
    #  path('base/', index, name='index'),
     path('k/', include('kennels.urls'), name='homepage_kennels'),
     path('pet/', include('pet.urls'), name='homepage'),
-
-
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
 urlpatterns += [
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
+    path('auth/', include('djoser.social.urls')),
+]
 
+urlpatterns += [re_path(r'^.*',
+                        TemplateView.as_view(template_name='register.html'))]
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-handler404 = 'accounts.views.error_404_view'

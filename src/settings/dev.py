@@ -72,22 +72,42 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'default.sqlite3',
         
-    },
-    # 'auth_db': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': 'auth_db.sqlite3',
-    # },
-    # 'primary': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME':  'primary.sqlite3',
-    # },
-    # 'replica1': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': 'replica1.sqlite3',
-    # },
-    # 'replica2': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME':  'replica2.sqlite3',
-    # },
-}
+    },}
+#     # 'auth_db': {
+#     #     'ENGINE': 'django.db.backends.sqlite3',
+#     #     'NAME': 'auth_db.sqlite3',
+#     # },
+#     # 'primary': {
+#     #     'ENGINE': 'django.db.backends.sqlite3',
+#     #     'NAME':  'primary.sqlite3',
+#     # },
+#     # 'replica1': {
+#     #     'ENGINE': 'django.db.backends.sqlite3',
+#     #     'NAME': 'replica1.sqlite3',
+#     # },
+#     # 'replica2': {
+#     #     'ENGINE': 'django.db.backends.sqlite3',
+#     #     'NAME':  'replica2.sqlite3',
+#     # },
+# }
 
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'auth_system',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Rkp3009@123',
+
+
+
+#         'HOST': 'localhost'
+#     }
+# }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'softlanceworks@gmail.com'
+EMAIL_HOST_PASSWORD = 'Softlance@123'
+EMAIL_USE_TLS = True

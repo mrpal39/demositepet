@@ -159,13 +159,14 @@
 				</div>
 				<div id="reccomended" class="owl-carousel owl-theme">
 
-				{% for pet_object in pet_objects  %}
+					{% for pet_object in pet_objects  %}
 					<div class="item">
 						<div class="strip grid">
 							<figure>
 								<a href="detail-restaurant.html" class="wish_bt"></a>
-								<a href="{% url 'PetDetail' pet_object.slug %}"><img src="{{pet_object.profile_picture}}"
-										class="img-fluid" alt="" width="400" height="266">
+								<a href="{% url 'PetDetail' pet_object.slug %}"><img
+										src="{{pet_object.profile_picture}}" class="img-fluid" alt="" width="400"
+										height="266">
 									<div class="read_more"><span>Read more</span></div>
 								</a>
 								<small>Restaurant</small>
@@ -535,7 +536,9 @@
 	</div>
 	<!-- /Sign In Popup -->
 
-	<div id="toTop"></div><!-- Back to top button -->
+	<div id="toTop">
+		
+	</div><!-- Back to top button -->
 
 
 </body>

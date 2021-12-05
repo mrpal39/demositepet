@@ -2,6 +2,7 @@ import os
 import django_heroku
 import raven
 
+SECRET_KEY='django-insecure-3za4=9d#hdzvkci@28nub9wgq2-y@q^z(l58t&tfq7z8xanhok'
 
 from datetime import timedelta
 
@@ -34,10 +35,19 @@ THIRD_PARTS_APPS = (
     "raven.contrib.django.raven_compat",
     "password_reset",
     "rest_framework",
+    'rest_framework_simplejwt',
+    'djoser',
+    
     "social_django",
     'filer',
+    
+    
+    
     'mptt',
-    "drf_yasg",
+    
+    
+    
+    
     'allauth',
     'allauth.account',
     'storages',
@@ -175,46 +185,34 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 REST_FRAMEWORK = {
     'DATETIME_FORMAT': "%Y-%m-%d %H:%M:%S",
     "DEFAULT_AUTHENTICATION_CLASSES": (
+        'rest_framework.authentication.TokenAuthentication',
+
         "rest_framework.authentication.SessionAuthentication",
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
-    # "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
-    # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
-
-
+  
 }
+SIMPLE_JWT = {
+   'AUTH_HEADER_TYPES': ('JWT',),
+}
+DJOSER = {
+    "LOGIN_FIELD":"email",
+    'USER_CREATE_PASSWORD_RETYPE':True,
+    "USERNAME_CHANGED_EMAIL_CONFIRMATION":True,
+    "PASSWORD_CHANGED_EMAIL_CONFIRMATION":True,
+    'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
+    'USERNAME_RESET_CONFIRM_URL': '#/username/reset/confirm/{uid}/{token}',
+    'ACTIVATION_URL': '#/activate/{uid}/{token}',
+    'SET_USERNAME_RETYPE':True,
+    'SET_PASSWORD_RETYPE':True,
+    'SEND_ACTIVATION_EMAIL': True,
+    'SERIALIZERS': {
+        'user_create':'accounts.serializers.UserCreateSerializer',
+        'user':'accounts.serializers.UserCreateSerializer',
+        'user_delete':'djoser.serializers.UserDeleteSerializer',
 
-
-# SIMPLE_JWT = {
-#     'ACCESS_TOKEN_LIFETIME': timedelta(days=1095),
-#     'REFRESH_TOKEN_LIFETIME': timedelta(days=1095),
-#     'ROTATE_REFRESH_TOKENS': False,
-#     'BLACKLIST_AFTER_ROTATION': True,
-
-#     # 'ALGORITHM': 'HS256',
-#     # 'SIGNING_KEY': SECRET_KEY,
-#     # 'VERIFYING_KEY': None,
-#     # 'AUDIENCE': None,
-#     # 'ISSUER': None,
-
-#     'AUTH_HEADER_TYPES': ('Bearer',),
-#     'USER_ID_FIELD': 'id',
-#     'USER_ID_CLAIM': 'user_id',
-
-#     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
-#     'TOKEN_TYPE_CLAIM': 'token_type',
-
-#     'JTI_CLAIM': 'jti',
-#     'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
-
-#     'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
-#     'SLIDING_TOKEN_LIFETIME': timedelta(days=1095),
-#     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1095),
-# }
-
-
-
-
-
+        
+        },
+}
 
 django_heroku.settings(locals())

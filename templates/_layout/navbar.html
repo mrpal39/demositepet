@@ -1,48 +1,89 @@
-{% load i18n static compress %}
+{% load static %}
+
+<ul id="top_menu">
+    {% if user.is_authenticated %}
+
+    <li><a href="{% url 'logout' %}" class="btn_add">logout</a></li>
+
+    {% else %}
 
 
-<nav class="navbar navbar-expand-lg navbar-light ">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'homepage' %}">look pet</a>
+    <li><a href="account.html" class="btn_add">Add Listing</a></li>
+    <li><a href="#sign-in-dialog" id="sign-in" class="login" title="Sign In">Sign In</a></li>
+    {% endif %}
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-item nav-link " href="{% url 'apiView'%}">API </a>
-                </li>
-               
-
-                    {% if user.is_authenticated %}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            {{user}}
-    
-                        </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{% url 'OwnerPetdetail' user %}">Profile</a></li>
-                        <li><a class="dropdown-item" href="{% url 'resigter_pet'%}">Add Pet</a></li>
-                        <li><a class="dropdown-item" href="">Another action</a></li>
-                        <li><a class="dropdown-item" href="{% url 'logout' %}">{% trans 'Logout' %}</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                </li>
-                {% else %}
-                <a class="nav-item nav-link" href="{% url 'create' %}">{% trans 'Create Account' %}</a>
-                <a class="nav-item nav-link" href="{% url 'login' %}">login</a>
-                {% endif %}
-                <a class="nav-item nav-link" href="#">{% trans 'About' %}</a>
-            </ul>
-           
+    <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>
+</ul>
+<!-- /top_menu -->
+<a href="#menu" class="btn_mobile">
+    <div class="hamburger hamburger--spin" id="hamburger">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
         </div>
     </div>
+</a>
+<nav id="menu" class="main-menu">
+    <ul>
+        <li><span><a href="{% url 'homepage' %}">Home</a></span>
+
+        </li>
+        <li><span><a href="#0">Find a PET</a></span>
+
+        </li>
+        <li><span><a href="#0">Pet Care & Health</a></span>
+            {% comment %} <ul>
+                <li><a href="admin_section/index.html">Admin section</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="help.html">Help Section</a></li>
+                <li><a href="faq.html">Faq Section</a></li>
+                <li><a href="wishlist.html">Wishlist page</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li>
+                    <span><a href="#0">Icon Packs</a></span>
+                    <ul>
+                        <li><a href="icon-pack-1.html">Icon pack 1</a></li>
+                        <li><a href="icon-pack-2.html">Icon pack 2</a></li>
+                        <li><a href="icon-pack-3.html">Icon pack 3</a></li>
+                        <li><a href="icon-pack-4.html">Icon pack 4</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="media-gallery.html">Media gallery</a></li>
+            </ul> {% endcomment %}
+        </li>
+        <li><span><a href="#0">Shop</a></span>
+            {% comment %} <ul>
+                <li><a href="404.html">404 page</a></li>
+                <li><a href="contacts-2.html">Contacts 2</a></li>
+                <li><a href="pricing-tables.html">Pricing tables</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="menu-options.html">Menu Options</a></li>
+                <li><a href="invoice.html">Invoice</a></li>
+                <li><a href="coming_soon/index.html">Coming Soon</a></li>
+            </ul> {% endcomment %}
+        </li>
+
+        {% if user.is_authenticated %}
+        <li><span><a href="{% url 'resigter_pet' %}">Register</a></span></li>
+
+        <li><span><a href="#0">Profile</a></span>
+            <ul>
+                <li><a href="{% url 'dashboard' user %}">{{user.username}}</a></li>
+
+
+                <li><a href="{% url 'logout' %}" class="btn_add">logout</a></li>
+            </ul>
+        </li>
+        {% else %}
+        <ul id="top_menu">
+
+
+            <li><a href="" id="sign-in" class="login" title="Sign In">Sign In</a></li>
+        </ul>
+        {% endif %}
+
+        </li>
+    </ul>
 </nav>

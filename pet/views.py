@@ -150,7 +150,7 @@ class RegisterPetView(CreateView):
         return reverse("homepage")
 
     def get(self, request, *args, **kwargs):
-        if not request.user.is_information_confirmed:
+        if not request.user:
             messages.warning(request, _(
                 "Please confirm your informations before registering a new pet."))
             return HttpResponseRedirect(reverse("profile"))

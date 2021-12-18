@@ -11,7 +11,7 @@ urlpatterns = [
 
     path('',views.pet_list,name='pet_list'),
 
-    path("resigte", views.RegisterPetView.as_view(), name="resigter_pet"),
+    path("resigter/", views.RegisterPetView.as_view(), name="resigter_pet"),
     path("edit/<pk>", views.EditPetView.as_view(), name="edit"),
     path("d/<pk>/<slug>/", views.PetDetail.as_view(), name="pet_Detail"),
     path("p/<pk>/", views.petCategoryIn, name="petCategoryIn"),

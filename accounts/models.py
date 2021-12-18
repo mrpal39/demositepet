@@ -71,7 +71,7 @@ class UserAccountManager(BaseUserManager):
 
 
 class OwnerProfile(AbstractBaseUser, PermissionsMixin):
-    username=models.CharField(max_length=250)
+    username=models.CharField(max_length=250, unique=True)
     email = models.EmailField(max_length=255, unique=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)

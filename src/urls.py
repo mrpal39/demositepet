@@ -14,12 +14,10 @@ from events.admin import event_admin_site
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-    # path('event-admin/', event_admin_site.urls),
     path('accounts/', include('accounts.urls')),
     path('', home_page, name='homepage'),
     path('wish/', wishList, name='wishlist'),
     path('search/', searchbar, name='searchbar'),
-   #  path('base/', index, name='index'),
     path('k/', include('kennels.urls'), name='homepage_kennels'),
     path('pet/', include('pet.urls'), name='homepage'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

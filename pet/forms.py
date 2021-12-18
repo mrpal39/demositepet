@@ -8,7 +8,7 @@ class PetForm(forms.ModelForm):
 
     class Meta:
         model = Pet
-        fields = ('name', 'description', 'category', 'breeds',
+        fields = ('name', 'description', 'category', 'breed',
                   'size', 'city', 'state', 'sex', 'profile_picture')
         widgets = {
             "name": forms.TextInput(attrs={"class": "form-control", "placeholder": _("Costelinha")}),

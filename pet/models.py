@@ -29,9 +29,15 @@ class CategoryManager(models.Manager):
         )
 
 class Category(models.Model):
-    name = models.CharField(max_length=20, unique=True)
-    object=CategoryManager()
-    
+    name = models.CharField(max_length=5000)
+    img = models.FileField(upload_to="images/%Y-%m-%d-%H-%M-%S/department-images/", null=True)
+    desc = models.TextField()
+    active = models.BooleanField(default=False)
+    code  = models.CharField(max_length=5000, null=True, unique=True, verbose_name="Department Code")
+    slug = models.SlugField(unique=True, editable=True, max_length=500, null=True, blank=True)
+
+    def get_total_pet(self):
+        return Pet.objects.filter(category_id=self.id).count() or 0
     def __str__(self):
         return self.name
 
@@ -40,6 +46,9 @@ class Bread(models.Model):
     name = models.CharField(max_length=50)
     Category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                     related_name='Category')
+
+    def get_total_pet(self):
+        return Pet.objects.filter(bread_id=self.id).count() or 0
 
     def __str__(self):
         return self.name
@@ -69,7 +78,7 @@ class Pet(TimeStampedModel):
                                    "has went gone next to the school in downtown. "
                                    "There's a slight flaw in the tail fur.")
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    breeds = models.ForeignKey(Bread, on_delete=models.CASCADE)
+    breed = models.ForeignKey(Bread, on_delete=models.CASCADE)
     size = models.CharField(max_length=2, choices=PET_SIZE, blank=True)
     kennel=models.ForeignKey(Kennel,on_delete=models.CASCADE,blank=True)
     state = models.ForeignKey(State, on_delete=models.CASCADE)

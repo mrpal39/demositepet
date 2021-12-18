@@ -17,7 +17,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('', home_page, name='homepage'),
     path('wish/', wishList, name='wishlist'),
-    path('search/', SearchView.as_view(), name='search'),
+    path('search/', SearchView.as_view(), name='searchbar'),
     path('k/', include('kennels.urls'), name='homepage_kennels'),
     path('pet/', include('pet.urls'), name='homepage'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

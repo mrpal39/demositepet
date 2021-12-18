@@ -33,7 +33,7 @@ from django.views.generic import ListView
 
 
 class SearchView(ListView):
-    template_name = 'view.html'
+    template_name = 'pet/grid-listings-filterscol-search-aside.html'
     paginate_by = 20
     count = 0
     
@@ -45,12 +45,15 @@ class SearchView(ListView):
 
     def get_queryset(self):
         request = self.request
-        query = request.GET.get('q', None)
-        
+        query= request.GET.get('q', None)
+        query_cat= request.GET.get('q', None)
+        query_loc = request.GET.get('q', None)
+        print(query_cat)
+
         if query is not None:
             blog_results        = Pet.objects.search(query)
-            lesson_results      = Category.objects.search(query)
-            profile_results     = State.objects.search(query)
+            lesson_results      = Category.objects.search(query_cat)
+            profile_results     = State.objects.search(query_loc)
             
             # combine querysets 
             queryset_chain = chain(

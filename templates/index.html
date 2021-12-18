@@ -66,14 +66,14 @@
 						<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
 					</div>
 					<div class="row">
-						{% for pet in us_pet %}
+						{% for pet in pet_Cat %}
 
 						<div class="col-lg-4 col-sm-6">
 							<a href="grid-listings-filterstop.html" class="grid_item">
 								<figure>
-									<img src="{{pet.i}}" alt="">
+									<img src="media/{{pet.img}}" alt="">
 									<div class="info">
-										<small>122 Locations</small>
+										<small>{{pet.get_total_pet}} pet</small>
 										<h3>{{pet.name}}</h3>
 									</div>
 								</figure>
@@ -83,66 +83,6 @@
 
 						{% endfor %}
 
-						<!-- /grid_item -->
-						<div class="col-lg-4 col-sm-6">
-							<a href="grid-listings-filterstop.html" class="grid_item">
-								<figure>
-									<img src="{% static 'img/home_cat_2.jpg'%}" alt="">
-									<div class="info">
-										<small>245 Locations</small>
-										<h3>Hotels</h3>
-									</div>
-								</figure>
-							</a>
-						</div>
-						<!-- /grid_item -->
-						<div class="col-lg-4 col-sm-6">
-							<a href="grid-listings-filterstop.html" class="grid_item">
-								<figure>
-									<img src="{% static 'img/home_cat_3.jpg'%}" alt="">
-									<div class="info">
-										<small>95 Locations</small>
-										<h3>Restaurants</h3>
-									</div>
-								</figure>
-							</a>
-						</div>
-						<!-- /grid_item -->
-						<div class="col-lg-4 col-sm-6">
-							<a href="grid-listings-filterstop.html" class="grid_item">
-								<figure>
-									<img src="{% static 'img/home_cat_4.jpg'%}" alt="">
-									<div class="info">
-										<small>123 Locations</small>
-										<h3>Bars</h3>
-									</div>
-								</figure>
-							</a>
-						</div>
-						<!-- /grid_item -->
-						<div class="col-lg-4 col-sm-6">
-							<a href="grid-listings-filterstop.html" class="grid_item">
-								<figure>
-									<img src="{% static 'img/home_cat_5.jpg'%}" alt="">
-									<div class="info">
-										<small>92 Locations</small>
-										<h3>Events</h3>
-									</div>
-								</figure>
-							</a>
-						</div>
-						<!-- /grid_item -->
-						<div class="col-lg-4 col-sm-6">
-							<a href="grid-listings-filterstop.html" class="grid_item">
-								<figure>
-									<img src="{% static 'img/home_cat_6.jpg'%}" alt="">
-									<div class="info">
-										<small>92 Locations</small>
-										<h3>Fitness</h3>
-									</div>
-								</figure>
-							</a>
-						</div>
 						<!-- /grid_item -->
 					</div>
 					<!-- /row -->
@@ -159,7 +99,7 @@
 				</div>
 				<div id="reccomended" class="owl-carousel owl-theme">
 
-					{% for pet_object in pet_objects  %}
+					{% for pet_object in pet_objects %}
 					<div class="item">
 						<div class="strip grid">
 							<figure>
@@ -471,7 +411,8 @@
 								</div>
 							</li>
 							<li>
-								<img src="{% static 'img/cards_all.svg'%}" alt=""></li>
+								<img src="{% static 'img/cards_all.svg'%}" alt="">
+							</li>
 						</ul>
 					</div>
 					<div class="col-lg-6">
@@ -537,7 +478,7 @@
 	<!-- /Sign In Popup -->
 
 	<div id="toTop">
-		
+
 	</div><!-- Back to top button -->
 
 

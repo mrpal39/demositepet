@@ -20,20 +20,13 @@ from kennels.models import Kennel
 from . import services
 
 
-class CategoryManager(models.Manager):
-    def count_pets(self,  Category):
-        return (
-            self.filter(pet__category__in=Category)
-            .annotate(num_pets=models.Count("pet"))
-            .order_by("Category")
-        )
 
 class Category(models.Model):
     name = models.CharField(max_length=5000)
-    img = models.FileField(upload_to="images/%Y-%m-%d-%H-%M-%S/department-images/", null=True)
+    img = models.FileField(upload_to="images/cat-images/", null=True)
     desc = models.TextField()
     active = models.BooleanField(default=False)
-    code  = models.CharField(max_length=5000, null=True, unique=True, verbose_name="Department Code")
+    code  = models.CharField(max_length=5000, null=True, unique=True, verbose_name="Code")
     slug = models.SlugField(unique=True, editable=True, max_length=500, null=True, blank=True)
 
     def get_total_pet(self):

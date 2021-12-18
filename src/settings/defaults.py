@@ -166,7 +166,7 @@ LOGIN_REDIRECT_URL = '/profiles/'
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-CITIES_DATA_LOCATION = os.path.join(BASE_DIR, "../data/cities_data")
+CITIES_DATA_LOCATION = ("data/cities_data")
 
 # CITIES_DATA_LOCATION = os.path.join(BASE_DIR, "../../data/cities_data")
 # etre adat aload in server

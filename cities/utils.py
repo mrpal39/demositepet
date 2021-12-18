@@ -9,11 +9,11 @@ from cities import models
 
 
 def get_states_filename(country):
-    return os.path.join(settings.CITIES_DATA_LOCATION, country.lower(), "states.csv")
+    return os.path.join(settings.CITIES_DATA_LOCATION, country.lower(), "citie.csv")
 
 
-# def get_cities_filename(country):
-#     return os.path.join(settings.CITIES_DATA_LOCATION, country.lower(), "citie.csv")
+def get_cities_filename(country):
+    return os.path.join(settings.CITIES_DATA_LOCATION, country.lower(), "citie.csv")
 
 
 # def get_postcode_cities_filename(country):
@@ -31,26 +31,26 @@ def load_states_from_file(filename):
 
     for state in states:
         models.State.objects.get_or_create(
-            code=state.get("code"), name=state.get("name")
+            name=state.get("statename"), abbr=state.get("statename")
         )
 
 
 # def load_cities_from_file(filename):
 #     cities = load_file(filename)
-#     cities = sorted(cities, key=lambda c: c["statename"])
-#     grouped_cities = itertools.groupby(cities, key=lambda c: c["statename"])
+#     cities = sorted(cities, key=lambda c: c["name"])
+#     grouped_cities = itertools.groupby(cities, key=lambda c: c["code"])
+#     # print (states)
 
 #     for state_abbr, cities in grouped_cities:
-#         states = models.State.objects.get(name=state_abbr)
+#         states = models.State.objects.get(code=state_abbr)
 #         print(states)
-#         # print (states)
+        # for city in cities:
+            # models.District.objects.get_or_create(
+        #         state=states, name=city.get("name"),code=city.get("code"),
+        #     )
 
-#         for city in cities:
-#             models.City.objects.get_or_create(
-#                 state=states, name=city.get("Districtname")
-#             )
 
-#             # print(city.get("Districtname"))
+        #     print(city.get("name"))
 
 
 # def load_post_cities_from_file(filename):

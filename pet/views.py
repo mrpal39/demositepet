@@ -124,8 +124,6 @@ def petCategoryIn(request, pk):
     count_pet = Category.objects.filter(id=pk)
     print(count_pet)
     dd = dosg.count()
-    # print(dd)
-    # print(dosg)
 
     context = {
         'pets': dosg,

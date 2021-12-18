@@ -7,8 +7,8 @@ __pycache__/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-.sqlite3
-.sqlite3-journal
+*.sqlite3
+*.sqlite3-journal
 # media
 # static_root
 env/
@@ -109,7 +109,6 @@ ipython_config.py
 #Pipfile.lock
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
 
 # Celery stuff
 celerybeat-schedule

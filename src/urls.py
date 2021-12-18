@@ -13,8 +13,8 @@ from events.admin import event_admin_site
 
 urlpatterns = [
 
-    path('entity-admin/', admin.site.urls),
-    path('event-admin/', event_admin_site.urls),
+    path('admin/', admin.site.urls),
+    # path('event-admin/', event_admin_site.urls),
     path('accounts/', include('accounts.urls')),
     path('', home_page, name='homepage'),
     path('wish/', wishList, name='wishlist'),
@@ -31,6 +31,10 @@ urlpatterns += [
     path('auth/', include('djoser.social.urls')),
 ]
 
-urlpatterns += [re_path(r'^.*',
+urlpatterns += [
+  
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += [re_path(r'^.api/*',
                         TemplateView.as_view(template_name='register.html'))]
 

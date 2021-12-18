@@ -22,8 +22,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = True
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [ BASE_DIR , 'static/' ] 
+STATIC_URL = 'static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+MEDIA_ROOT = '/media/'
+
+MEDIA_URL = '/media/'
+
 STATIC_ROOT = 'static_root/'
 
 

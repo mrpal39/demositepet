@@ -9,7 +9,7 @@ from django.conf.urls import handler404
 from django.urls.conf import include
 from common.views import *
 from events.admin import event_admin_site
-
+from pet.views import SearchView
 
 urlpatterns = [
 
@@ -17,7 +17,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('', home_page, name='homepage'),
     path('wish/', wishList, name='wishlist'),
-    path('search/', searchbar, name='searchbar'),
+    path('search/', SearchView.as_view(), name='search'),
     path('k/', include('kennels.urls'), name='homepage_kennels'),
     path('pet/', include('pet.urls'), name='homepage'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

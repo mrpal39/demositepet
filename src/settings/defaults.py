@@ -103,8 +103,18 @@ TEMPLATES = [
                 "common.context_processors.us_pet",
 
             ],
-            "loaders": [("django.template.loaders.cached.Loader", PROJECT_TEMPLATE_LOADERS)],
+            "loaders": 
+                [
+                    ("django.template.loaders.cached.Loader",
+                     PROJECT_TEMPLATE_LOADERS)],
+            'libraries':{
+            'class_name': 'templatetags.class_name',
+            
+            },
         },
+        
+       
+
     }
 ]
 

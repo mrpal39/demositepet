@@ -24,7 +24,49 @@ from django.views.generic import DetailView, CreateView, UpdateView, TemplateVie
 from kennels.models import Kennel
 from .forms import PetForm
 from.models import Bread, Category, Pet
+from cities.models import State
 from.serializers import PetSer
+from itertools import chain
+from django.views.generic import ListView
+
+
+
+
+class SearchView(ListView):
+    template_name = 'view.html'
+    paginate_by = 20
+    count = 0
+    
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['count'] = self.count or 0
+        context['query'] = self.request.GET.get('q')
+        return context
+
+    def get_queryset(self):
+        request = self.request
+        query = request.GET.get('q', None)
+        
+        if query is not None:
+            blog_results        = Pet.objects.search(query)
+            lesson_results      = Category.objects.search(query)
+            profile_results     = State.objects.search(query)
+            
+            # combine querysets 
+            queryset_chain = chain(
+                    blog_results,
+                    lesson_results,
+                    profile_results
+            )        
+            qs = sorted(queryset_chain, 
+                        key=lambda instance: instance.pk, 
+                        reverse=True)
+            self.count = len(qs) # since qs is actually a list
+            return qs
+        return Pet.objects.none() # just an empty queryset as default
+
+
+
 
 
 @api_view(['GET', 'POST'])

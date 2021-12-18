@@ -18,9 +18,30 @@ import hashlib
 from cities.models import State
 from kennels.models import Kennel
 from . import services
+from django.db.models import Q
 
 
+class PetManager(models.Manager):
+    def search(self, query=None):
+        qs = self.get_queryset()
+        if query is not None:
+            or_lookup = (Q(name__icontains=query) | 
+                         Q(description__icontains=query)|
+                         Q(slug__icontains=query)
+                        )
+            qs = qs.filter(or_lookup).distinct() # distinct() is often necessary with Q lookups
+        return qs
+class CatManager(models.Manager):
 
+    def search(self, query=None):
+        qs = self.get_queryset()
+        if query is not None:
+            or_lookup = (Q(name__icontains=query) | 
+                         Q(desc__icontains=query)|
+                         Q(slug__icontains=query)
+                        )
+            qs = qs.filter(or_lookup).distinct() # distinct() is often necessary with Q lookups
+        return qs
 class Category(models.Model):
     name = models.CharField(max_length=5000)
     img = models.FileField(upload_to="images/cat-images/", null=True)
@@ -28,12 +49,13 @@ class Category(models.Model):
     active = models.BooleanField(default=False)
     code  = models.CharField(max_length=5000, null=True, unique=True, verbose_name="Code")
     slug = models.SlugField(unique=True, editable=True, max_length=500, null=True, blank=True)
-
+    objects=CatManager()
     def get_total_pet(self):
         return Pet.objects.filter(category_id=self.id).count() or 0
     def __str__(self):
         return self.name
-
+   
+    
 
 class Bread(models.Model):
     name = models.CharField(max_length=50)
@@ -45,7 +67,6 @@ class Bread(models.Model):
 
     def __str__(self):
         return self.name
-
 
 def get_slug(instance):
     city = ""
@@ -81,14 +102,15 @@ class Pet(TimeStampedModel):
         upload_to="pet_profiles", help_text=_("Maximum image size is 8MB"))
     slug = AutoSlugField(max_length=50, populate_from=get_slug, unique=False)
 
+
+    objects         = PetManager()
     def __str__(self):
         return str(self.slug)
 
     def __unicode__(self):
         return str(self.id)
 
-    def get_absolute_url(self):
-        return reverse("/")
+  
 
     def get_sex(self):
         return dict(self.PET_SEX).get(self.sex)

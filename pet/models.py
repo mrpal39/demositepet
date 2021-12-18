@@ -93,8 +93,14 @@ class Pet(TimeStampedModel):
     def get_sex(self):
         return dict(self.PET_SEX).get(self.sex)
 
-    def get_size(self):
-        return dict(self.PET_SIZE).get(self.size)
+
+    def get_category(self):
+        return self.category.name
+
+
+    def get_breed_name(self):
+        return self.breed.name
+
 
     @property
     def thumb_picture(self):

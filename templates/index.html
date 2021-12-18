@@ -94,8 +94,8 @@
 			<div class="container-fluid margin_80_55">
 				<div class="main_title_2">
 					<span><em></em></span>
-					<h2>Popular listings</h2>
-					<p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+					<h2>Popular Breed</h2>
+					<p>he better I get to know men, the more I find myself loving dogs</p>
 				</div>
 				<div id="reccomended" class="owl-carousel owl-theme">
 
@@ -103,13 +103,13 @@
 					<div class="item">
 						<div class="strip grid">
 							<figure>
-								<a href="detail-restaurant.html" class="wish_bt"></a>
+								<a href="" class="wish_bt"></a>
 								<a href="{% url 'PetDetail' pet_object.slug %}"><img
-										src="{{pet_object.profile_picture}}" class="img-fluid" alt="" width="400"
+										src="{{pet_object.profile_picture.url}}" class="img-fluid" alt="" width="400"
 										height="266">
 									<div class="read_more"><span>Read more</span></div>
 								</a>
-								<small>Restaurant</small>
+								<small>{{pet_object.get_breed_name}}</small>
 							</figure>
 							<div class="wrapper">
 								<h3><a href="detail-restaurant.html">{{pet_object.name}}</a></h3>

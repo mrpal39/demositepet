@@ -8,8 +8,8 @@ from django.conf import settings
 from cities import models
 
 
-def get_states_filename(country):
-    return os.path.join(settings.CITIES_DATA_LOCATION, country.lower(), "citie.csv")
+# def get_states_filename(country):
+#     return os.path.join(settings.CITIES_DATA_LOCATION, country.lower(), "citie.csv")
 
 
 def get_cities_filename(country):
@@ -26,28 +26,29 @@ def load_file(filename):
         return list(reader)
 
 
-def load_states_from_file(filename):
-    states = load_file(filename)
+# def load_states_from_file(filename):
+#     states = load_file(filename)
 
-    for state in states:
-        models.State.objects.get_or_create(
-            name=state.get("statename"), abbr=state.get("statename")
-        )
+#     for state in states:
+#         models.State.objects.get_or_create(
+#             name=state.get("statename"), abbr=state.get("statename")
+#         )
+#         print(state.get("statename"))
 
 
-# def load_cities_from_file(filename):
-#     cities = load_file(filename)
-#     cities = sorted(cities, key=lambda c: c["name"])
-#     grouped_cities = itertools.groupby(cities, key=lambda c: c["code"])
-#     # print (states)
+def load_cities_from_file(filename):
+    cities = load_file(filename)
+    cities = sorted(cities, key=lambda c: c["Districtname"])
+    grouped_cities = itertools.groupby(cities, key=lambda c: c["statename"])
+    # print (states)
 
-#     for state_abbr, cities in grouped_cities:
-#         states = models.State.objects.get(code=state_abbr)
-#         print(states)
-        # for city in cities:
-            # models.District.objects.get_or_create(
-        #         state=states, name=city.get("name"),code=city.get("code"),
-        #     )
+    for state_abbr, cities in grouped_cities:
+        states = models.State.objects.get(abbr=state_abbr)
+        print(states)
+        for city in cities:
+            models.District.objects.get_or_create(
+                state=states, name=city.get("Districtname"),code=city.get("pincode"),
+            )
 
 
         #     print(city.get("name"))

@@ -2,18 +2,12 @@ import os
 import django_heroku
 import raven
 
-SECRET_KEY='django-insecure-3za4=9d#hdzvkci@28nub9wgq2-y@q^z(l58t&tfq7z8xanhok'
 
 from datetime import timedelta
 
 from decouple import config
 from dj_database_url import parse as db_url
 BASE_DIR = os.path.dirname(__file__)
-
-ALLOWED_HOSTS = ['https://demositepet.herokuapp.com',
-                 'localhost',
-                 '127.0.0.1']
-
 
 DJANGO_APPS = (
 
@@ -148,7 +142,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 THUMBNAIL_ALIASES = {
@@ -170,16 +163,16 @@ CITIES_DATA_LOCATION = ("data/cities_data")
 
 # CITIES_DATA_LOCATION = os.path.join(BASE_DIR, "../../data/cities_data")
 # etre adat aload in server
-
-
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_URLS_REGEX = ""
-
-
-
-
 FILE_UPLOAD_HANDLERS = ["django.core.files.uploadhandler.MemoryFileUploadHandler",
                         "django.core.files.uploadhandler.TemporaryFileUploadHandler"]
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.SHA1PasswordHasher',
+    'django.contrib.auth.hashers.MD5PasswordHasher',
+    'django.contrib.auth.hashers.CryptPasswordHasher'
+)
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -241,5 +234,6 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
 }
 
 AUTH_USER_MODEL = 'accounts.OwnerProfile'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())

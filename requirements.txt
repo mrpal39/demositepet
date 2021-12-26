@@ -80,7 +80,7 @@ six==1.16.0
 social-auth-app-django==4.0.0
 social-auth-core==4.1.0
 sortedcontainers==2.4.0
-sqlparse==0.4.1
+sqlparse==0.4.2
 starkbank-ecdsa==1.1.1
 toml==0.10.2
 Unidecode==1.1.2
